@@ -40,7 +40,7 @@
         }
         
         webrtc = new SimpleWebRTC({
-          url: "https://webappeditor.com:8888",
+          url: "https://webappeditor.com:8085",
           socketio: {'force new connection': true},
           localVideoEl: 'localVideo',
           remoteVideosEl: 'remoteVideos',
