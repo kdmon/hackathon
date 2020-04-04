@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@1.9.12/dist/quasar.min.css" rel="stylesheet" type="text/css">
+    <script src="/js/simplewebrtc-latest.js"></script>
+  </head>
+
+  <body>
+    
+    <div id="app">
+      <q-layout view="hHh lpR fFf">
+        <!--
+        <q-header elevated class="bg-primary text-white" height-hint="98">
+          <q-toolbar>
+            <q-toolbar-title>
+              <q-avatar>
+                <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+              </q-avatar>
+              Title
+            </q-toolbar-title>
+          </q-toolbar>
+    
+          <q-tabs align="left">
+            <q-route-tab to="/page1" label="Page One"></q-route-tab>
+            <q-route-tab to="/page2" label="Page Two"></q-route-tab>
+            <q-route-tab to="/page3" label="Page Three"></q-route-tab>
+          </q-tabs>
+        </q-header>
+        -->
+        <q-page-container>
+          <router-view></router-view>
+        </q-page-container>
+    
+      </q-layout>
+    </div>
+    
+    <!-- Add the following at the end of your body tag -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
+    <script>
+      window.quasarConfig = {
+        brand: {
+          primary: '#036FE2', // Blue, original #4AC9FF teal fails AA-level contast on white
+          secondary: '#92347B',// Purple brand color
+          accent: '#92347B',  // Purple #983579 brand purple fails AAA-level, so adjust to #92347B - hardly perceptible
+          //accent: '#0371e6',   // #4AC9FF teal fails AA-level contast on white, suggest instead #0371e6
+          info: '#036FE2',     // #4AC9FF teal fails AA-level contast on white, suggest instead #0371e6
+          positive: '#0D8500', // #52C76E green fails contrast, suggest use #238604
+          negative: '#B30000', // #E23862 red fails contrast, suggest use #ab1b1b
+          warning: '#FBCA41'   // #F5C123, FBCA41 yellow fails at even 3:1 contrast level. Suggest instead: #fbc020 or #c38919
+        },
+        loadingBar: {
+          color: 'white',
+          size: '4px'
+        } //hijack ajax option 
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@1.9.12/dist/quasar.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@1.9.12/dist/lang/sv.umd.min.js"></script>
+    <script src="https://unpkg.com/axios@0.16.1/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vuex/dist/vuex.js"></script>
+    <!-- HTTPvueloader helps parse .vue files -->
+    <script src="https://webappeditor.com/kdmon/px/master/js/httpvueloader.js"></script>
+    
+    <script>
+      Quasar.lang.set(Quasar.lang.sv)
+
+      var router = new VueRouter({
+        //mode: 'history',
+        routes: [{
+          name: 'home',
+          path: '/',
+          component: httpVueLoader('views/home.vue'),
+          meta: {
+            title: 'Gruppsamtal'
+          }
+        },{
+          name: 'waitingroom',
+          path: '/waitingroom',
+          component: httpVueLoader('views/waitingroom.vue'),
+          meta: {
+            title: 'Väntrum'
+          }
+        },{
+          name: 'chat',
+          path: '/chat',
+          component: httpVueLoader('views/chat.vue'),
+          meta: {
+            title: 'Videosamtal'
+          }
+        }]
+      })
+      
+      new Vue({
+        el: '#app',
+        data: function () {
+          return {
+            a: 'hejsan'
+          }
+        },
+      	router: router
+      })
+    </script>
+  </body>
+</html>
