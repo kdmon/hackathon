@@ -7,33 +7,38 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/quasar@1.9.12/dist/quasar.min.css" rel="stylesheet" type="text/css">
+    <script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
     <script src="/js/simplewebrtc-latest.js"></script>
+    <title>Futurumcare - Gruppsamtal på webben</title>
   </head>
 
   <body>
     
     <div id="app">
       <q-layout view="hHh lpR fFf">
-        <!--
-        <q-header elevated class="bg-primary text-white" height-hint="98">
+
+        <q-header elevated class="bg-grey-1 text-black" height-hint="98">
           <q-toolbar>
             <q-toolbar-title>
-              <q-avatar>
-                <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-              </q-avatar>
-              Title
+              <span style="cursor: pointer" @click="router.push({name: 'home'})">
+                <q-icon size="36px" name="group_work"></q-icon>
+                <span style="font-weight: 700"> Futurumcare</span>
+              </span>
             </q-toolbar-title>
           </q-toolbar>
-    
+          
           <q-tabs align="left">
-            <q-route-tab to="/page1" label="Page One"></q-route-tab>
-            <q-route-tab to="/page2" label="Page Two"></q-route-tab>
-            <q-route-tab to="/page3" label="Page Three"></q-route-tab>
+            <q-route-tab to="/page1" no-caps label="Kom igång"></q-route-tab>
+            <q-route-tab to="/page2" no-caps label="För vårdpersonal"></q-route-tab>
+            <q-route-tab to="/page3" no-caps label="Om Futurumcare"></q-route-tab>
           </q-tabs>
+          
         </q-header>
-        -->
+
         <q-page-container>
-          <router-view></router-view>
+          <q-page>
+            <router-view></router-view>
+          </q-page>
         </q-page-container>
     
       </q-layout>
@@ -106,6 +111,21 @@
         },
       	router: router
       })
+      
+      Vue.config.devtools = true
+      
     </script>
+    
+    <style>
+      h1 {
+        font-size: 4em;
+      }
+      h2 {
+        font-size: 3em;
+      }
+      h3 {
+        font-size: 2em;
+      }
+    </style>
   </body>
 </html>
