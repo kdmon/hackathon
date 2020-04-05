@@ -76,6 +76,7 @@
       
       <div v-else>
         <div id="remoteVideos" :class="'feeds-' + feeds"></div>
+        <h2 v-if="feeds < 1" style="margin: 2em;" class="text-white">Du är den enda i samtalet...</h2>
       </div>
 
       <!--
@@ -180,6 +181,7 @@
     background-size: cover;
     min-height: calc(100vh - 50px);
   }
+  
   #localVideo {
     width: 100%;
     border: 1em solid black;
@@ -191,6 +193,11 @@
     width: 100%;
     height: calc(100vh - 50px);
     background: #aaa;
+  }
+  
+  .feeds-0 {
+    height: 0 !important;
+    background: #00000000 !important;
   }
   
   .feeds-1 video {
