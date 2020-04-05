@@ -22,15 +22,8 @@
         <div class="row q-col-gutter-xl">
           <div class="col-sm-12 col-md-6">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec
-              odio orci. Nam interdum mi sit amet turpis pellentesque aliquam. Proin
-              imperdiet sit amet ante id lobortis. Aliquam a augue sem. Mauris in 
-              laoreet diam. Cras orci metus, tempus et hendrerit eleifend, faucibus
-              eu libero. Pellentesque ac vulputate nisi. Aenean vel bibendum ante. 
-              Pellentesque fermentum felis eu tortor imperdiet lacinia. Nullam 
-              pulvinar eros id nisi ullamcorper faucibus. In id lorem eu ligula 
-              fringilla elementum nec in felis. Praesent auctor nulla lectus, sit
-              amet tempus leo luctus ac.
+              För att använda tjänsten behöver du ha tillgång till en dator
+              eller Android enhet med Chrome, Firefox eller Edge webbläsare.
             </p>
           </div>
           <div class="col-sm-12 col-md-6">
@@ -56,9 +49,8 @@
         
         <h3>Vad är detta?</h3>
         <p>
-          Detta är en proof-of-concept, skapad under Hackthecrisis
-          4-6 april 2020. Koden finns att hämta på 
-          <a href="https://github.com/kdmon/hackathon">Github</a>.
+          Detta är en snabb proof-of-concept, skapad under Hackthecrisis
+          4-6 april 2020.
         </p>
 
         <h3>Lagrar eller lyssnar ni på mina samtal?</h3>
@@ -94,6 +86,12 @@
           </div>
         </div>
         
+        <h3>Finns koden någonstans?</h3>
+        <p>
+          Ja, den finns att hämta på 
+          <a href="https://github.com/kdmon/hackathon">Github</a>.
+        </p>
+
       </q-card-section>
     </q-card>
   </div>
